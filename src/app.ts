@@ -4,6 +4,7 @@ import cluster from "cluster"
 import os from 'os'
 const numsOfCpu=os.cpus().length
 
+import  {Hashedpassword}  from './password'
 
 const app = express()
 const PORT =8000
@@ -26,6 +27,8 @@ type Status='Yes' | 'No'
 
 const isActive:Status='Yes'
 console.log(isActive)
+
+
 
 if(cluster.isPrimary){
     console.log('primary ',process.pid)
